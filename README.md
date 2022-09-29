@@ -16,9 +16,10 @@ different things on paper such as budgeting, but when I need to make a change, t
 By creating this application, it makes it easy and intuitive and alters different components of the budget. By allowing
 multiple profiles, I can then also enable other people to use the application as well.
 
-A *bulleted* list:
-- item 1
-- item 2
-- item 3
-
-An example of text with **bold** and *italic* fonts.  
+**User Stories:**
+- *As a user*, I want to be able to add a budget section to a person’s profile.
+- *As a user*, I want to be able to set a limit for a certain budget section.
+- *As a user*, I want to be able to create a balance for a certain budget section.
+- *As a user*, I want to be able to subtract money from a balance in a budget section after spending money.
+- *As a user*, I want to be able to add money to the balance of a budget section.
+- *As a user*, I want to be able to print out a list of all budget sections.
