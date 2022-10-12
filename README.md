@@ -1,6 +1,6 @@
 # Personal Budget Manager
 
-## Multi-profile budget manager with custom budget sections.
+## Multi-Profile Budget Manager with Custom Budget Sections.
 
 The application will keep track of budgeting by allowing multiple users to input different sections of their budget
 based on their spending needs and habits (which would call for multiple user profiles). Anybody looking to keep track
