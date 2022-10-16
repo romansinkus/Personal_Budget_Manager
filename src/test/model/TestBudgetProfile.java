@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class testBudgetProfile {
+public class TestBudgetProfile {
 
     private BudgetProfile profile1;
     private BudgetSection section1;
