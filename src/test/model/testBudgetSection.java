@@ -3,8 +3,7 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 class testBudgetSection {
 
@@ -31,15 +30,18 @@ class testBudgetSection {
 
     @Test
     public void testDecreaseLimit() {
-        section.decreaseLimit(100);
+        boolean decLim = section.decreaseLimit(100);
+        assertTrue(decLim);
         assertEquals(100, section.getLimit());
     }
 
     @Test
     public void testDecreaseLimitTwoTimes() {
-        section.decreaseLimit(50);
+        boolean decLimA = section.decreaseLimit(50);
+        assertTrue(decLimA);
         assertEquals(150, section.getLimit());
-        section.decreaseLimit(50);
+        boolean decLimB = section.decreaseLimit(50);
+        assertTrue(decLimB);
         assertEquals(100, section.getLimit());
     }
 
@@ -58,22 +60,33 @@ class testBudgetSection {
 
     @Test
     public void testDecreaseLimitToZero() {
-        section.decreaseLimit(200);
+        boolean decLimA = section.decreaseLimit(200);
+        assertTrue(decLimA);
         assertEquals(0, section.getLimit());
     }
 
     @Test
     public void testWithdrawalOnce() {
-        section.withdrawalFromBalance(100);
+        boolean decBalA = section.withdrawalFromBalance(100);
+        assertTrue(decBalA);
         assertEquals(100, section.getRemainingBalance());
     }
 
     @Test
     public void testWithdrawalTwice() {
-        section.withdrawalFromBalance(100);
+        boolean decBalA = section.withdrawalFromBalance(100);
+        assertTrue(decBalA);
         assertEquals(100, section.getRemainingBalance());
-        section.withdrawalFromBalance(50);
+        boolean decBalB = section.withdrawalFromBalance(50);
+        assertTrue(decBalB);
         assertEquals(50, section.getRemainingBalance());
+    }
+
+    @Test
+    public void testWithdrawalToZero() {
+        boolean decBalA = section.withdrawalFromBalance(200);
+        assertTrue(decBalA);
+        assertEquals(0, section.getRemainingBalance());
     }
 
     @Test
