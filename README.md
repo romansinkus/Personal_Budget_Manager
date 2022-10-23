@@ -24,3 +24,7 @@ By allowing for customizable budget sections, it enables anyone to use the appli
 - *As a user*, I want to be able to increase the limit of a budget section.
 - *As a user*, I want to be able to decrease the limit of a budget section.
 - *As a user*, I want to be able to print out all the budget sections.
+
+**Phase 2 User Stories**
+- *As a user*, I want to be able to be able to save my budget profile to file
+- *As a user*, I want to be able to load my budget profile from file
