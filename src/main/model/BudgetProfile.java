@@ -2,6 +2,7 @@ package model;
 
 import java.util.*;
 
+// Class for the collection of budget sections that includes list of budget sections and a profile name
 public class BudgetProfile {
     private String profileName;
     private List<BudgetSection> budgetSectionList;

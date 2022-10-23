@@ -19,9 +19,8 @@ By allowing for customizable budget sections, it enables anyone to use the appli
 **User Stories:**
 - *As a user*, I want to be able to add a budget section to the profile.
 - *As a user*, I want to be able to set a limit for a certain budget section.
-- *As a user*, I want to be able to set a balance for a certain budget section.
 - *As a user*, I want to be able to subtract money from a balance in a budget section (after spending money).
 - *As a user*, I want to be able to add money to the balance of a budget section.
 - *As a user*, I want to be able to increase the limit of a budget section.
 - *As a user*, I want to be able to decrease the limit of a budget section.
-- *As a user*, I want to be able to print out a list of all budget sections.
+- *As a user*, I want to be able to print out all the budget sections.

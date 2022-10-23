@@ -8,6 +8,7 @@ import java.util.Scanner;
 // Referenced the TellerApp example
 // TellerApp Github link: https://github.students.cs.ubc.ca/CPSC210/TellerApp
 
+// Class that takes user through the application's features (responsible for the user interface)
 public class BudgetApp {
 
     private Scanner input = new Scanner(System.in);
@@ -79,7 +80,7 @@ public class BudgetApp {
         System.out.println("Name for profile: " + profile.getProfileName());
     }
 
-    // EFFECTS: Displays all of the budget sections in the profile; if empty, outputs a message
+    // EFFECTS: Displays all the budget sections in the profile; if empty, outputs a message
     public void displayBudgetSections() {
         System.out.println("Current Budget: ");
         for (BudgetSection bs : profile.getBudgetSectionList()) {

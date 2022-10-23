@@ -1,5 +1,6 @@
 package model;
 
+// Class that includes all the information in a given budget section (name, limit, remaining balance)
 public class BudgetSection {
     private String name;
     private double limit;
