@@ -2,20 +2,32 @@ package ui;
 
 import model.BudgetProfile;
 import model.BudgetSection;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 // Referenced the TellerApp example
 // TellerApp Github link: https://github.students.cs.ubc.ca/CPSC210/TellerApp
 
+// Referenced the Json Serialization Demo
+// Json Serialization Demo Github link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+
 // Class that takes user through the application's features (responsible for the user interface)
 public class BudgetApp {
-
+    private static final String JSON_STORE = "./data/budgetProfile.json";
     private Scanner input = new Scanner(System.in);
     private BudgetProfile profile;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: runs the budget application
-    public BudgetApp() {
+    public BudgetApp() throws FileNotFoundException {
+        input = new Scanner(System.in);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runBudgetApp();
     }
 
@@ -53,6 +65,8 @@ public class BudgetApp {
         System.out.println("d - display budget sections");
         System.out.println("a - add budget section");
         System.out.println("e - edit a budget section");
+        System.out.println("l - load budget profile");
+        System.out.println("s - save budget profile");
         System.out.println("q - quit");
     }
 
@@ -65,6 +79,10 @@ public class BudgetApp {
             addBudgetSection();
         } else if (command.equals("e")) {
             editBudgetSection();
+        } else if (command.equals("l")) {
+            loadBudgetProfile();
+        } else if (command.equals("s")) {
+            saveBudgetProfile();
         } else {
             System.out.println("User input invalid. Please try again.");
         }
@@ -98,13 +116,12 @@ public class BudgetApp {
     public void addBudgetSection() {
         String name;
         double lim;
-        System.out.println("add budget section");
         System.out.println("Enter name for budget section: ");
         name = input.next();
         System.out.println("Enter initial limit for section: ");
         lim = input.nextDouble();
         BudgetSection newBudgetSection = new BudgetSection(name, lim);
-        profile.addProfileSection(newBudgetSection);
+        profile.addBudgetSection(newBudgetSection);
     }
 
     // MODIFIES: this
@@ -160,5 +177,28 @@ public class BudgetApp {
         }
         System.out.println("No budget section found matching that name...");
         return null;
+    }
+
+    // EFFECTS: saves the budget profile to file
+    private void saveBudgetProfile() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(profile);
+            jsonWriter.close();
+            System.out.println("Saved " + profile.getProfileName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads budget profile from file
+    private void loadBudgetProfile() {
+        try {
+            profile = jsonReader.read();
+            System.out.println("Loaded " + profile.getProfileName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 }

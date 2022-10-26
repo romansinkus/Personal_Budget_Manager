@@ -30,9 +30,9 @@ public class TestBudgetProfile {
     @Test
     public void testAddProfileSectionDuplicate() {
         assertEquals(new ArrayList<>(), profile1.getBudgetSectionList());
-        profile1.addProfileSection(section1);
+        profile1.addBudgetSection(section1);
         assertEquals(1, profile1.getBudgetSectionList().size());
-        profile1.addProfileSection(section1);
+        profile1.addBudgetSection(section1);
         assertEquals(1, profile1.getBudgetSectionList().size());
     }
 
@@ -41,17 +41,17 @@ public class TestBudgetProfile {
     public void testAddProfileSection() {
         assertEquals(new ArrayList<>(), profile1.getBudgetSectionList());
         assertEquals(0, profile1.getBudgetSectionList().size());
-        profile1.addProfileSection(section1);
+        profile1.addBudgetSection(section1);
         assertEquals(1, profile1.getBudgetSectionList().size());
     }
 
     @Test
     public void testAddProfileSectionTwice() {
         assertEquals(new ArrayList<>(), profile1.getBudgetSectionList());
-        profile1.addProfileSection(section1);
+        profile1.addBudgetSection(section1);
         assertEquals(1, profile1.getBudgetSectionList().size());
         assertEquals(section1, profile1.getBudgetSectionList().get(0));
-        profile1.addProfileSection(section2);
+        profile1.addBudgetSection(section2);
         assertEquals(2, profile1.getBudgetSectionList().size());
         assertEquals(section2, profile1.getBudgetSectionList().get(1));
     }

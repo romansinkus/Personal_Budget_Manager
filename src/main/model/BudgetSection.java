@@ -1,7 +1,13 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
+// Referenced the Json Serialization Demo
+// Json Serialization Demo Github link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+
 // Class that includes all the information in a given budget section (name, limit, remaining balance)
-public class BudgetSection {
+public class BudgetSection implements Writable {
     private String name;
     private double limit;
     private double remainingBalance;
@@ -66,4 +72,12 @@ public class BudgetSection {
         return remainingBalance;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("limit", limit);
+        json.put("balance", remainingBalance);
+        return json;
+    }
 }
