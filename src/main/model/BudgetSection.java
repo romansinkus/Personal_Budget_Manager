@@ -72,6 +72,11 @@ public class BudgetSection implements Writable {
         return remainingBalance;
     }
 
+    // EFFECTS: Setter for the balance in budget section
+    public void setRemainingBalance(double num) {
+        this.remainingBalance = num;
+    }
+
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

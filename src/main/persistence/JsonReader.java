@@ -22,7 +22,7 @@ public class JsonReader {
         this.source = source;
     }
 
-    // EFFECTS: reads workroom from file and returns it;
+    // EFFECTS: reads budget profile from file and returns it;
     // throws IOException if an error occurs reading data from file
     public BudgetProfile read() throws IOException {
         String jsonData = readFile(source);
@@ -41,7 +41,7 @@ public class JsonReader {
         return contentBuilder.toString();
     }
 
-    // EFFECTS: parses workroom from JSON object and returns it
+    // EFFECTS: parses budget profile from JSON object and returns it
     private BudgetProfile parseBudgetProfile(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         BudgetProfile bp = new BudgetProfile(name);
@@ -49,8 +49,8 @@ public class JsonReader {
         return bp;
     }
 
-    // MODIFIES: wr
-    // EFFECTS: parses thingies from JSON object and adds them to workroom
+    // MODIFIES: bp
+    // EFFECTS: parses budget sections from JSON object and adds them to budget profile
     private void addBudgetSections(BudgetProfile bp, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("budget sections");
         for (Object json : jsonArray) {
@@ -60,12 +60,13 @@ public class JsonReader {
     }
 
     // MODIFIES: bp
-    // EFFECTS: parses budget section from JSON object and adds it to workroom
+    // EFFECTS: parses budget section from JSON object and adds it to budget profile
     private void addBudgetSection(BudgetProfile bp, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         double limit = jsonObject.getDouble("limit");
-//        double remainingBalance = jsonObject.getDouble("balance");
+        double remainingBalance = jsonObject.getDouble("balance");
         BudgetSection budgetSection = new BudgetSection(name, limit);
+        budgetSection.setRemainingBalance(remainingBalance);
         bp.addBudgetSection(budgetSection);
     }
 }

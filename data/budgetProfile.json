@@ -1,8 +1,25 @@
 {
-    "name": "Roman",
-    "budget sections": [{
-        "balance": 87,
-        "name": "test",
-        "limit": 91
-    }]
+    "name": "My Budget Profile",
+    "budget sections": [
+        {
+            "balance": 200,
+            "name": "groceries",
+            "limit": 400
+        },
+        {
+            "balance": 35,
+            "name": "subscriptions",
+            "limit": 40
+        },
+        {
+            "balance": 10,
+            "name": "school",
+            "limit": 50
+        },
+        {
+            "balance": 40,
+            "name": "clothing",
+            "limit": 40
+        }
+    ]
 }

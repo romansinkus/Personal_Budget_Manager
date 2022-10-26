@@ -1,0 +1,15 @@
+{
+    "name": "My Budget Profile",
+    "budget sections": [
+        {
+            "balance": 900,
+            "name": "technology",
+            "limit": 1000
+        },
+        {
+            "balance": 200,
+            "name": "food",
+            "limit": 350
+        }
+    ]
+}

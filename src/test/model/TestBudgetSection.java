@@ -134,4 +134,11 @@ class TestBudgetSection {
     public void testGetName() {
         assertEquals("Groceries", section.getName());
     }
+
+    @Test
+    public void testSetRemainingBalance() {
+        assertEquals(200, section.getRemainingBalance());
+        section.setRemainingBalance(100);
+        assertEquals(100, section.getRemainingBalance());
+    }
 }
