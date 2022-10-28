@@ -46,7 +46,7 @@ public class BudgetProfile implements Writable {
         return json;
     }
 
-    // EFFECTS: returns things in this workroom as a JSON array
+    // EFFECTS: returns budgetSections in this budgetProfile as a JSON array
     private JSONArray budgetSectionsToJson() {
         JSONArray jsonArray = new JSONArray();
 

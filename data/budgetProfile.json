@@ -1,25 +1,20 @@
 {
-    "name": "My Budget Profile",
+    "name": "Roman",
     "budget sections": [
         {
+            "balance": 30,
+            "name": "section1",
+            "limit": 100
+        },
+        {
             "balance": 200,
-            "name": "groceries",
-            "limit": 400
+            "name": "section2",
+            "limit": 213
         },
         {
-            "balance": 35,
-            "name": "subscriptions",
-            "limit": 40
-        },
-        {
-            "balance": 10,
-            "name": "school",
-            "limit": 50
-        },
-        {
-            "balance": 40,
-            "name": "clothing",
-            "limit": 40
+            "balance": 333,
+            "name": "section3",
+            "limit": 455
         }
     ]
 }

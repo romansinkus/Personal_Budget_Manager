@@ -13,7 +13,7 @@ import org.json.*;
 // Referenced the Json Serialization Demo
 // Json Serialization Demo Github link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
 
-// Represents a reader that reads workroom from JSON data stored in file
+// Represents a reader that reads budgetProfile from JSON data stored in file
 public class JsonReader {
     private String source;
 

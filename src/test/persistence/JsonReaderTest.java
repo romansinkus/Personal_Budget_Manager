@@ -28,7 +28,7 @@ public class JsonReaderTest extends JsonTest {
     }
 
     @Test
-    void testReaderEmptyWorkRoom() {
+    void testReaderEmptyBudgetProfile() {
         JsonReader reader = new JsonReader("./data/testReaderEmptyBudgetProfile.json");
         try {
             BudgetProfile bp = reader.read();

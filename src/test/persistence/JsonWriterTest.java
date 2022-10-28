@@ -29,7 +29,7 @@ public class JsonWriterTest extends JsonTest{
     }
 
     @Test
-    void testWriterEmptyWorkroom() {
+    void testWriterEmptyBudgetProfile() {
         try {
             BudgetProfile bp = new BudgetProfile("My Budget Profile");
             JsonWriter writer = new JsonWriter("./data/testWriterEmptyBudgetProfile.json");
@@ -47,7 +47,7 @@ public class JsonWriterTest extends JsonTest{
     }
 
     @Test
-    void testWriterGeneralWorkroom() {
+    void testWriterGeneralBudgetProfile() {
         try {
             BudgetProfile bp = new BudgetProfile("My Budget Profile");
             bp.addBudgetSection(new BudgetSection("technology", 1000));
