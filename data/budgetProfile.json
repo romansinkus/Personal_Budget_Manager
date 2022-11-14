@@ -2,19 +2,14 @@
     "name": "Roman",
     "budget sections": [
         {
-            "balance": 30,
+            "balance": 100,
             "name": "section1",
             "limit": 100
         },
         {
-            "balance": 200,
+            "balance": 100,
             "name": "section2",
-            "limit": 213
-        },
-        {
-            "balance": 333,
-            "name": "section3",
-            "limit": 455
+            "limit": 100
         }
     ]
 }
