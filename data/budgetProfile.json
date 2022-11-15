@@ -1,15 +1,8 @@
 {
-    "name": "Roman",
-    "budget sections": [
-        {
-            "balance": 100,
-            "name": "section1",
-            "limit": 100
-        },
-        {
-            "balance": 100,
-            "name": "section2",
-            "limit": 100
-        }
-    ]
+    "name": "My budget profile",
+    "budget sections": [{
+        "balance": 10000,
+        "name": "test",
+        "limit": 10000
+    }]
 }
