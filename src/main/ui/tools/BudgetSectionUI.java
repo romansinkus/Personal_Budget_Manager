@@ -7,25 +7,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class BudgetSectionUI extends JInternalFrame {
+// Referenced AlarmSystem:
+// https://github.students.cs.ubc.ca/CPSC210/AlarmSystem/tree/main/src/main/ca/ubc/cpsc210/alarm/ui
 
-    private BudgetProfile profile;
-    private String name;
-    private JTextArea profileDisplay;
-    private boolean profileNullCheck;
+// Class responsible for creating a window with displayed budget sections
+public class BudgetSectionUI extends JInternalFrame {
 
     private static final int WIDTH = 250;
     private static final int HEIGHT = 400;
 
-    public BudgetSectionUI(BudgetProfile bp, Component parent) {
-        if (profileDisplay == null) {
-            profileDisplay = new JTextArea(toString(bp));
-        } else {
-            //remove the previous JFrame
-            profileDisplay.setText(toString(bp));
-        }
+    // EFFECTS: Constructor for BudgetSectionUI class
+    public BudgetSectionUI(JTextArea profileDisplay, BudgetProfile bp, Component parent) {
 
-//        profileDisplay = new JTextArea(toString(bp));
+        profileDisplay = new JTextArea(toString(bp));
+
+        profileDisplay.setText(toString(bp));
+
         profileDisplay.setEditable(false);
         profileDisplay.setAlignmentX(CENTER_ALIGNMENT);
 
@@ -38,6 +35,7 @@ public class BudgetSectionUI extends JInternalFrame {
         setVisible(true);
     }
 
+    // EFFECTS: Creates an output string with all budget sections inside a budget profile
     public String toString(BudgetProfile profile) {
         System.out.println("Current Budget: ");
         ArrayList<String> str = new ArrayList<>();
@@ -54,6 +52,7 @@ public class BudgetSectionUI extends JInternalFrame {
         return listString;
     }
 
+    // EFFECTS: Sets position of the frame that includes the budget profile information
     private void setPosition(Component parent) {
         setLocation(parent.getWidth() - WIDTH - WIDTH + 30, 0);
     }

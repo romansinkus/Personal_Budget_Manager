@@ -30,8 +30,15 @@ By allowing for customizable budget sections, it enables anyone to use the appli
 - *As a user*, I want to be able to load my budget profile from file
 
 **Instructions for Grader:**
-- You can generate the first required event related to adding Xs to a Y by...
-- You can generate the second required event related to adding Xs to a Y by...
-- You can locate my visual component by...
-- You can save the state of my application by...
-- You can reload the state of my application by...
+- You can generate the first required event related to adding Xs to a Y by clicking the "Add Budget Section" button.
+- You can generate the second required event related to adding Xs to a Y by clicking the "Edit Budget Section" button,
+  entering amount you would like to edit by, and clicking which part of the budget section you would like to edit.
+  - There are 4 different events within the "Edit Budget Section" event:
+    - Increase limit
+    - Decrease limit
+    - Increase balance
+    - Decrease balance
+- You can locate my visual component by running the application, entering a name for the profile, and clicking "OK"
+  the visual component is the background of the GUI once the profile has been created).
+- You can save the state of my application by clicking the "Save Budget Profile" button.
+- You can reload the state of my application by clicking the "Load Budget Profile" button.
