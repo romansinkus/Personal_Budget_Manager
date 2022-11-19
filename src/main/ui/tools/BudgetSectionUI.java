@@ -35,6 +35,7 @@ public class BudgetSectionUI extends JInternalFrame {
         setVisible(true);
     }
 
+    // MODIFIES: this
     // EFFECTS: Creates an output string with all budget sections inside a budget profile
     public String toString(BudgetProfile profile) {
         System.out.println("Current Budget: ");

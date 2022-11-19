@@ -1,8 +1,8 @@
 {
-    "name": "My budget profile",
+    "name": "aj",
     "budget sections": [{
-        "balance": 10000,
-        "name": "test",
-        "limit": 10000
+        "balance": 200,
+        "name": "section1",
+        "limit": 200
     }]
 }

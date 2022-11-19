@@ -30,6 +30,7 @@ By allowing for customizable budget sections, it enables anyone to use the appli
 - *As a user*, I want to be able to load my budget profile from file
 
 **Instructions for Grader:**
+- You can display the current budget sections by clicking "Display Budget Sections"
 - You can generate the first required event related to adding Xs to a Y by clicking the "Add Budget Section" button.
 - You can generate the second required event related to adding Xs to a Y by clicking the "Edit Budget Section" button,
   entering amount you would like to edit by, and clicking which part of the budget section you would like to edit.
