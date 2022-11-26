@@ -33,7 +33,7 @@ public class EventLog implements Iterable<Event> {
         if (theLog == null) {
             theLog = new EventLog();
         }
-        
+
         return theLog;
     }
 

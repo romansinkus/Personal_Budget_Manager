@@ -67,27 +67,26 @@ public class TestBudgetProfile {
         assertEquals(str, profile1.toString());
     }
 
-//    @Test
-//    public void testToStringNotEmpty() {
-//        String str = "Budget Section Name: Groceries\n" +
-//                "Remaining balance: 400.0\n" +
-//                "Current budget limit: 400.0\n";
-//        profile1.addBudgetSection(section1);
-//        assertEquals(str, profile1.toString());
-//    }
+    @Test
+    public void testToStringNotEmpty() {
+        String str = "\nBudget Section Name: Groceries\n" +
+                "Remaining balance: 400.0\n" +
+                "Current budget limit: 400.0\n";
+        profile1.addBudgetSection(section1);
+        assertEquals(str, profile1.toString());
+    }
 
-//    @Test
-//    public void testToStringTwoSections() {
-//        String str = "Budget Section Name: Groceries\n" +
-//                "Remaining balance: 400.0\n" +
-//                "Current budget limit: 400.0\n" +
-//                "\n" +
-//                "Budget Section Name: Subscriptions\n" +
-//                "Remaining balance: 50.0\n" +
-//                "Current budget limit: 50.0\n" +
-//                "\n";
-//        profile1.addBudgetSection(section1);
-//        profile1.addBudgetSection(section2);
-//        assertEquals(str, profile1.toString());
-//    }
+    @Test
+    public void testToStringTwoSections() {
+        String str = "\nBudget Section Name: Groceries\n" +
+                "Remaining balance: 400.0\n" +
+                "Current budget limit: 400.0\n" +
+                "\n" +
+                "Budget Section Name: Subscriptions\n" +
+                "Remaining balance: 50.0\n" +
+                "Current budget limit: 50.0\n";
+        profile1.addBudgetSection(section1);
+        profile1.addBudgetSection(section2);
+        assertEquals(str, profile1.toString());
+    }
 }
