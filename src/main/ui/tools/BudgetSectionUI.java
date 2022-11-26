@@ -19,9 +19,9 @@ public class BudgetSectionUI extends JInternalFrame {
     // EFFECTS: Constructor for BudgetSectionUI class
     public BudgetSectionUI(JTextArea profileDisplay, BudgetProfile bp, Component parent) {
 
-        profileDisplay = new JTextArea(toString(bp));
+        profileDisplay = new JTextArea(bp.toString());
 
-        profileDisplay.setText(toString(bp));
+//        profileDisplay.setText(bp.toString());
 
         profileDisplay.setEditable(false);
         profileDisplay.setAlignmentX(CENTER_ALIGNMENT);
@@ -35,23 +35,22 @@ public class BudgetSectionUI extends JInternalFrame {
         setVisible(true);
     }
 
-    // MODIFIES: this
-    // EFFECTS: Creates an output string with all budget sections inside a budget profile
-    public String toString(BudgetProfile profile) {
-        System.out.println("Current Budget: ");
-        ArrayList<String> str = new ArrayList<>();
-
-        if (profile.getBudgetSectionList().size() == 0) {
-            str.add("Budget section list is empty." + "\n");
-        } else {
-            for (BudgetSection bs : profile.getBudgetSectionList()) {
-                str.add("\n" + "Budget Section Name: " + bs.getName() + "\nRemaining balance: "
-                        + bs.getRemainingBalance() + "\nCurrent budget limit: " + bs.getLimit() + "\n");
-            }
-        }
-        String listString = String.join("", str);
-        return listString;
-    }
+//    // MODIFIES: this
+//    // EFFECTS: Creates an output string with all budget sections inside a budget profile
+//    public String toString(BudgetProfile profile) {
+//        ArrayList<String> str = new ArrayList<>();
+//
+//        if (profile.getBudgetSectionList().size() == 0) {
+//            str.add("Budget section list is empty." + "\n");
+//        } else {
+//            for (BudgetSection bs : profile.getBudgetSectionList()) {
+//                str.add("\n" + "Budget Section Name: " + bs.getName() + "\nRemaining balance: "
+//                        + bs.getRemainingBalance() + "\nCurrent budget limit: " + bs.getLimit() + "\n");
+//            }
+//        }
+//        String listString = String.join("", str);
+//        return listString;
+//    }
 
     // EFFECTS: Sets position of the frame that includes the budget profile information
     private void setPosition(Component parent) {

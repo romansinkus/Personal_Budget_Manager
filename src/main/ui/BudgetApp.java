@@ -2,6 +2,7 @@ package ui;
 
 import model.BudgetProfile;
 import model.BudgetSection;
+import model.EventLog;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -55,6 +56,8 @@ public class BudgetApp {
             }
 
         }
+
+        EventLog.getInstance().iterator();
 
         System.out.println("Closing budget manager application...");;
     }

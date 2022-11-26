@@ -26,6 +26,25 @@ public class BudgetProfile implements Writable {
         if (!(budgetSectionList.contains(newSection))) {
             budgetSectionList.add(newSection);
         }
+        EventLog.getInstance().logEvent(new Event("Budget Section Added to Profile."));
+    }
+
+    // MODIFIES: this
+    // EFFECTS: Creates an output string with all budget sections inside a budget profile
+    public String toString() {
+        ArrayList<String> str = new ArrayList<>();
+
+        if (budgetSectionList.size() == 0) {
+            str.add("Budget section list is empty." + "\n");
+        } else {
+            for (BudgetSection bs : budgetSectionList) {
+                str.add("\n" + "Budget Section Name: " + bs.getName() + "\nRemaining balance: "
+                        + bs.getRemainingBalance() + "\nCurrent budget limit: " + bs.getLimit() + "\n");
+            }
+        }
+        String listString = String.join("", str);
+        EventLog.getInstance().logEvent(new Event("Displayed list of budget sections."));
+        return listString;
     }
 
     // EFFECTS: Returns profile name

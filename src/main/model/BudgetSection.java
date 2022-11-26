@@ -25,6 +25,7 @@ public class BudgetSection implements Writable {
     public boolean withdrawalFromBalance(double amount) {
         if (amount <= remainingBalance) {
             remainingBalance -= amount;
+            EventLog.getInstance().logEvent(new Event("Money withdrawn from balance."));
             return true;
         } else {
             return false;
@@ -36,6 +37,7 @@ public class BudgetSection implements Writable {
     // EFFECTS: Increase the remainingBalance by amount
     public void depositToBalance(double amount) {
         remainingBalance += amount;
+        EventLog.getInstance().logEvent(new Event("Money deposited to balance."));
     }
 
     // REQUIRES: limitIncrease > 0
@@ -43,6 +45,7 @@ public class BudgetSection implements Writable {
     // EFFECTS: Increase limit by limitIncrease
     public void increaseLimit(double limitIncrease) {
         limit += limitIncrease;
+        EventLog.getInstance().logEvent(new Event("Budget section limit increased."));
     }
 
     // REQUIRES: amount > 0
@@ -51,6 +54,7 @@ public class BudgetSection implements Writable {
     public boolean decreaseLimit(double limitDecrease) {
         if (limitDecrease <= limit) {
             limit -= limitDecrease;
+            EventLog.getInstance().logEvent(new Event("Budget section limit decreased."));
             return true;
         } else {
             return false;

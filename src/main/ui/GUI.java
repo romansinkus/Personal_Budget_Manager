@@ -2,6 +2,8 @@ package ui;
 
 import model.BudgetProfile;
 import model.BudgetSection;
+import model.Event;
+import model.EventLog;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 import ui.tools.BudgetSectionUI;
@@ -9,6 +11,7 @@ import ui.tools.BudgetSectionUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -48,6 +51,9 @@ public class GUI extends JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                for (Event next : EventLog.getInstance()) {
+                    System.out.println(next + "\n");
+                }
                 System.exit(0);
             }
         });
@@ -324,6 +330,8 @@ public class GUI extends JFrame {
                 // Unable to open
             }
         }
+
+
 
     }
 

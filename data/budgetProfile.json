@@ -1,8 +1,4 @@
 {
-    "name": "aj",
-    "budget sections": [{
-        "balance": 200,
-        "name": "section1",
-        "limit": 200
-    }]
+    "name": "r",
+    "budget sections": []
 }
