@@ -26,7 +26,7 @@ public class BudgetProfile implements Writable {
         if (!(budgetSectionList.contains(newSection))) {
             budgetSectionList.add(newSection);
         }
-        EventLog.getInstance().logEvent(new Event("Budget Section Added to Profile."));
+        EventLog.getInstance().logEvent(new Event("Budget section added to profile."));
     }
 
     // MODIFIES: this

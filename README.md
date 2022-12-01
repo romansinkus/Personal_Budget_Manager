@@ -43,3 +43,17 @@ By allowing for customizable budget sections, it enables anyone to use the appli
   the visual component is the background of the GUI once the profile has been created).
 - You can save the state of my application by clicking the "Save Budget Profile" button.
 - You can reload the state of my application by clicking the "Load Budget Profile" button.
+
+**Phase 4: Task 2:**
+- Wed Nov 30 23:19:49 PST 2022
+Displayed list of budget sections.
+- Wed Nov 30 23:19:54 PST 2022
+Budget section added to profile.
+- Wed Nov 30 23:20:01 PST 2022
+Budget section limit increased.
+- Wed Nov 30 23:20:02 PST 2022
+Budget section limit decreased.
+-Wed Nov 30 23:20:03 PST 2022
+Money deposited to balance.
+- Wed Nov 30 23:20:04 PST 2022
+Money withdrawn from balance.

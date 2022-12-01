@@ -4,8 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 // Test class for BudgetProfile
 public class TestBudgetProfile {
@@ -13,12 +14,15 @@ public class TestBudgetProfile {
     private BudgetProfile profile1;
     private BudgetSection section1;
     private BudgetSection section2;
+    private EventLog el;
 
     @BeforeEach
     public void setUp(){
         profile1 = new BudgetProfile("Timothy Green");
         section1 = new BudgetSection("Groceries", 400);
         section2 = new BudgetSection("Subscriptions", 50);
+        el = EventLog.getInstance();
+        el.clear();
     }
 
     @Test
@@ -89,4 +93,27 @@ public class TestBudgetProfile {
         profile1.addBudgetSection(section2);
         assertEquals(str, profile1.toString());
     }
+
+    @Test
+    public void testLogEventAddBudgetSection() {
+        profile1.addBudgetSection(section1);
+        Iterator<Event> itr = el.iterator();
+        assertTrue(itr.hasNext());
+        assertEquals("Event log cleared.", itr.next().getDescription());
+        assertTrue(itr.hasNext());
+        assertEquals("Budget section added to profile.", itr.next().getDescription());
+        assertFalse(itr.hasNext());
+    }
+
+    @Test
+    public void testLogEventToString() {
+        profile1.toString();
+        Iterator<Event> itr = el.iterator();
+        assertTrue(itr.hasNext());
+        assertEquals("Event log cleared.", itr.next().getDescription());
+        assertTrue(itr.hasNext());
+        assertEquals("Displayed list of budget sections.", itr.next().getDescription());
+        assertFalse(itr.hasNext());
+    }
+
 }

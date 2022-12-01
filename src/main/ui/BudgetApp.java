@@ -19,7 +19,7 @@ import java.util.Scanner;
 // Class that takes user through the application's features (responsible for the user interface)
 public class BudgetApp {
     private static final String JSON_STORE = "./data/budgetProfile.json";
-    private Scanner input = new Scanner(System.in);
+    private Scanner input;
     private BudgetProfile profile;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;

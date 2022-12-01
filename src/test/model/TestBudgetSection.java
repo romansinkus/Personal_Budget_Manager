@@ -3,16 +3,21 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Iterator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 // Test class for BudgetSection
 class TestBudgetSection {
 
     private BudgetSection section;
+    private EventLog el;
 
     @BeforeEach
     public void setup() {
         section = new BudgetSection("Groceries", 200);
+        el = EventLog.getInstance();
+        el.clear();
     }
 
     @Test
@@ -141,4 +146,50 @@ class TestBudgetSection {
         section.setRemainingBalance(100);
         assertEquals(100, section.getRemainingBalance());
     }
+
+    @Test
+    public void testEventLogDeposit() {
+        section.depositToBalance(100);
+        Iterator<Event> itr = el.iterator();
+        assertTrue(itr.hasNext());
+        assertEquals("Event log cleared.", itr.next().getDescription());
+        assertTrue(itr.hasNext());
+        assertEquals("Money deposited to balance.", itr.next().getDescription());
+        assertFalse(itr.hasNext());
+    }
+
+    @Test
+    public void testEventLogWithdrawal() {
+        section.withdrawalFromBalance(100);
+        Iterator<Event> itr = el.iterator();
+        assertTrue(itr.hasNext());
+        assertEquals("Event log cleared.", itr.next().getDescription());
+        assertTrue(itr.hasNext());
+        assertEquals("Money withdrawn from balance.", itr.next().getDescription());
+        assertFalse(itr.hasNext());
+    }
+
+    @Test
+    public void testEventLogIncreaseLimit() {
+        section.increaseLimit(100);
+        Iterator<Event> itr = el.iterator();
+        assertTrue(itr.hasNext());
+        assertEquals("Event log cleared.", itr.next().getDescription());
+        assertTrue(itr.hasNext());
+        assertEquals("Budget section limit increased.", itr.next().getDescription());
+        assertFalse(itr.hasNext());
+    }
+
+    @Test
+    public void testEventLogDecreaseLimit() {
+        section.decreaseLimit(100);
+        Iterator<Event> itr = el.iterator();
+        assertTrue(itr.hasNext());
+        assertEquals("Event log cleared.", itr.next().getDescription());
+        assertTrue(itr.hasNext());
+        assertEquals("Budget section limit decreased.", itr.next().getDescription());
+        assertFalse(itr.hasNext());
+    }
+
+
 }
