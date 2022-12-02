@@ -1,4 +1,8 @@
 {
-    "name": "r",
-    "budget sections": []
+    "name": "roman",
+    "budget sections": [{
+        "balance": 100,
+        "name": "section1",
+        "limit": 100
+    }]
 }

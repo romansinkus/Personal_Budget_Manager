@@ -70,7 +70,7 @@ public class GUI extends JFrame {
         String profileNLoc = JOptionPane.showInputDialog(null,
                 "Enter profile name: ", "Profile Name", JOptionPane.QUESTION_MESSAGE);
         profile = new BudgetProfile(profileNLoc);
-        profileDisplay = new JTextArea(); //TODO
+        profileDisplay = new JTextArea();
         setTitle(profileNLoc + "'s Personal Budget Manager");
         setSize(WIDTH, HEIGHT);
     }
@@ -330,8 +330,6 @@ public class GUI extends JFrame {
                 // Unable to open
             }
         }
-
-
 
     }
 

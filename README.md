@@ -53,7 +53,23 @@ Budget section added to profile.
 Budget section limit increased.
 - Wed Nov 30 23:20:02 PST 2022
 Budget section limit decreased.
--Wed Nov 30 23:20:03 PST 2022
+- Wed Nov 30 23:20:03 PST 2022
 Money deposited to balance.
 - Wed Nov 30 23:20:04 PST 2022
 Money withdrawn from balance.
+
+**Phase 4: Task 3:**
+If given more time, I would refactor my project in a few different ways.
+- I would eliminate the console application portion of the project and instead instantiate GUI in main so that when
+  main is run, GUI is instantiated instead of BudgetApp (this would mean that when main is run, the GUI runs instead of
+  the console application).
+- I would create a new package for all the button classes so that they aren't all in the GUI class. This would make
+  the code more organized/readable and no longer make GUI responsible for the implementation of each of the button
+  classes.
+- I would split up the GUI into different classes to increase cohesion. I would do this by splitting up different parts
+  of the GUI based on differing functionality. I could do this by splitting up the GUI class into two such that one GUI
+  class deals with saving/loading and the other is responsible for the rest of the remaining actions. When paired with 
+  bullet point #2, this would also separate the button classes allowing for the GUI classes to be more specific in
+  their functionalities.
+Apart from these factorizations listed above, I don't believe there are many other major necessary fixes. When looking
+at the UML diagram, there appears to not be much coupling and for the most part, the project maintains high cohesion.
